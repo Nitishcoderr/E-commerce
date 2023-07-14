@@ -1,2 +1,6 @@
 * We connect to database and Server
 * Making product APIs
+ -> Created Model For ProductModel
+* Controller for Creating product
+* Controller for getting the product
+
