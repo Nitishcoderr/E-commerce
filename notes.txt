@@ -1,3 +1,4 @@
+        Part - 1 
 * We connect to database and Server
 * Making product APIs
  -> Created Model For ProductModel
@@ -5,3 +6,8 @@
 * Route & Controller for getting the product
 * Route & Controller for Updating product
 * Route & Controller for Deleting product
+* Route & Controller for getting single  product through product id
+
+-----------*******--------------------
+            Part - 2 Backend error Handling
+-------------------------------------------
