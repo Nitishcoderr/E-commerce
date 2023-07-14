@@ -1,6 +1,7 @@
 * We connect to database and Server
 * Making product APIs
  -> Created Model For ProductModel
-* Controller for Creating product
-* Controller for getting the product
-
+* Route & Controller for Creating product
+* Route & Controller for getting the product
+* Route & Controller for Updating product
+* Route & Controller for Deleting product
