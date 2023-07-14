@@ -9,5 +9,7 @@
 * Route & Controller for getting single  product through product id
 
 -----------*******--------------------
-            Part - 2 Backend error Handling
+            Part - 2 Backend 
 -------------------------------------------
+* Error Handling utils->errorHandler, middleware
+* Updated controller by binding them trycatch using catchAsyncError which is definded in middleware
