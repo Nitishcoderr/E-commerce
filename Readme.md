@@ -9,3 +9,9 @@ todo
 * MongoDb
 * Dotenv
 * Nodemon
+* bcryptjs 
+* jsonwebtoken 
+* validator 
+* nodemailer 
+* cookie-parser 
+* body-parser

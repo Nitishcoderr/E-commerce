@@ -29,4 +29,6 @@ Function -> * You can search by product name
 -------------------------------**************------------------------
 
 --------------------Part - 3 User and Password Authentication-------------------
-
+* User can Register them
+  -> User Password is encrypted
+  -> User will get a token
