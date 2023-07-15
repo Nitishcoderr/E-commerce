@@ -36,3 +36,6 @@ Function -> * You can search by product name
 
 * Now we create Authenticat middleware if user login so he can access all data
 * Now added a function that when anyone create a product user id will reflect
+* Reset password or forget password
+* Using nodemailer to send mail to user for verification of user password
+* Some error are added in error

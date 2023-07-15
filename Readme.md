@@ -1,4 +1,4 @@
-### E-commerce Website 
+### TrendHub Website 
 
 # About
 todo

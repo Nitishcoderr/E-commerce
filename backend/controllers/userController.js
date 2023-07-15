@@ -2,7 +2,7 @@ const ErrorHandler = require('../utils/ErrorHandler.js')
 const catchAsyncError = require('../middlewares/catchAsyncError.js')
 const User = require('../models/userModel.js')
 const sendToken = require('../utils/jwtToken.js')
-
+const sendEmail = require('../utils/sendEmail.js')
 // Registation - user
 exports.registerUser = catchAsyncError(async(req,res,next)=>{
     const {name,email,password} = req.body
@@ -53,7 +53,42 @@ exports.logoutUser = catchAsyncError(async(req,res,next)=>{
     })
 })
 
+// Forget password
 
-// exports.registerUser = catchAsyncError(async(req,res,next)=>{
+exports.forgetPassword = catchAsyncError(async(req,res,next)=>{
+    const user = await User.findOne({email:req.body.email})
+    if(!user){
+        return next(new ErrorHandler("User not found",404))
+    }
+    // Get resetPassword Token
+    const resetToken = user.getResetPasswordToken()
+    await user.save({validateBeforeSave:false})
 
-// })
+    const resetPasswordUrl = `${req.protocol}://${req.get('host')}/api/v1/password/reset/${resetToken}`
+
+    const message = `Your password reset token id :- \n\n ${resetPasswordUrl} \n\n If you have not requested this email then, please ignore it`
+
+    try {
+        await sendEmail({
+            email:user.email,
+            subject:`TrendHub Password Recovery`,
+            message,
+        })
+        res.status(200).json({
+            success:true,
+            message:`Email send to ${user.email} successfully`
+        })
+    } catch (error) {
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpire = undefined;
+
+        await user.save({validateBeforeSave:false})
+
+        return next(new ErrorHandler(error.message,500))
+    }
+})
+
+// Reset password
+exports.forgetPassword = catchAsyncError(async(req,res,next)=>{
+
+})
