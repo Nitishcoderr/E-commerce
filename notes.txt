@@ -34,4 +34,5 @@ Function -> * You can search by product name
   -> User will get a token
   -> User can login through email password his token will save in cookie
 
-* Now we Authenticat user that if he login so he can access all data
+* Now we create Authenticat middleware if user login so he can access all data
+* Now added a function that when anyone create a product user id will reflect
