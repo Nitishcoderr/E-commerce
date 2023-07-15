@@ -1,4 +1,4 @@
-        Part - 1 
+--------------------Part - 1-------------------- 
 * We connect to database and Server
 * Making product APIs
  -> Created Model For ProductModel
@@ -8,8 +8,25 @@
 * Route & Controller for Deleting product
 * Route & Controller for getting single  product through product id
 
------------*******--------------------
-            Part - 2 Backend 
+-------------------------------**************--------------------
+--------------------Part - 2 Backend Error Handling-------------------
 -------------------------------------------
 * Error Handling utils->errorHandler, middleware
 * Updated controller by binding them trycatch using catchAsyncError which is definded in middleware
+* Handling uncaught Exception error means console.log(kuxbhi)
+* Unhandled promise rejection ---> When mongoDb url error occured
+* wrong MongoDb id error -- when wrong product id entered
+
+-------------------------------**************------------------------
+
+--------------------Part - 3 Search Filter Pagination-------------------
+->So that user can can filter item by item name or price
+WE WIll ADD FEATURE IN utils - apifeatures.js
+Function -> * You can search by product name
+            * limited Page will be shown (5) product per Page
+            * Filtered items will be shown to you
+
+-------------------------------**************------------------------
+
+--------------------Part - 3 User and Password Authentication-------------------
+
