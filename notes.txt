@@ -32,3 +32,6 @@ Function -> * You can search by product name
 * User can Register them
   -> User Password is encrypted
   -> User will get a token
+  -> User can login through email password his token will save in cookie
+
+* Now we Authenticat user that if he login so he can access all data
