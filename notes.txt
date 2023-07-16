@@ -54,3 +54,18 @@ Function -> * You can search by product name
 -------------------------------**************------------------------
 
 --------------------Part - 5 Making Order APIs -------------------
+
+* Creating OrderModel for order
+* Create new order
+* Get single order details
+* Get logged in user order
+* Get all order
+* Get all order -- admin
+* update order status -- admin
+* Delete order -- admin
+
+
+-------------------------------**************------------------------
+------------------------------------------------------------------FRONTEND--------------------------------------------------
+
+--------------------Part - 1 Frontend -------------------
