@@ -39,3 +39,18 @@ Function -> * You can search by product name
 * Reset password or forget password
 * Using nodemailer to send mail to user for verification of user password
 * Some error are added in error
+
+-------------------------------**************------------------------
+
+--------------------Part - 4 Backend user routes APIs -------------------
+* Now admin can update user role,Delete,Update profile
+* Admin Can see all user
+* Admin Can see single user
+
+
+* User can review - update,create
+* Admin can update delete reviews
+
+-------------------------------**************------------------------
+
+--------------------Part - 5 Making Order APIs -------------------

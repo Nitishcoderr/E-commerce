@@ -88,7 +88,105 @@ exports.forgetPassword = catchAsyncError(async(req,res,next)=>{
     }
 })
 
-// Reset password
-exports.forgetPassword = catchAsyncError(async(req,res,next)=>{
+// Reset password --------todo
+// exports.forgetPassword = catchAsyncError(async(req,res,next)=>{
 
+// })
+
+// TO get user details
+
+exports.getUserDetails = catchAsyncError(async(req,res,next)=>{
+    const user = await User.findById(req.user.id)
+
+    res.status(200).json({
+        success:true,
+        user,
+    })
+})
+
+// TO update user profile
+
+exports.updateProfile = catchAsyncError(async(req,res,next)=>{
+    const newUserData = {
+        name:req.body.name,
+        email:req.body.email
+    }
+    // TODO AVATAR
+    const user = await User.findByIdAndUpdate(req.user.id,newUserData,{
+        new:true,
+        runValidators:true,
+        userFindAndModify:false,
+    })
+    res.status(200).json({
+        success:true
+    })
+})
+
+// Get all user (admin)
+exports.getAllUser = catchAsyncError(async(req,res,next)=>{
+    const users = await User.find()
+
+    res.status(200).json({
+        success:true,
+        users,
+    });
+});
+
+// Get single user (admin)
+exports.getSingleUser = catchAsyncError(async(req,res,next)=>{
+    const user = await User.findById(req.params.id)
+
+    if(!user){
+        return next(new ErrorHandler(`User does not exists with id: ${req.params.id}`))
+    }
+
+    res.status(200).json({
+        success:true,
+        user
+    })
+})
+
+
+// TO update user role --(Admin)
+
+exports.updateUserRole = catchAsyncError(async(req,res,next)=>{
+    const newUserData = {
+        name:req.body.name,
+        email:req.body.email,
+        role:req.body.role
+    }
+    // TODO AVATAR
+    const user = await User.findByIdAndUpdate(req.params.id,newUserData,{
+        new:true,
+        runValidators:true,
+        userFindAndModify:false,
+    })
+
+    
+    if(!user){
+        return next(new ErrorHandler(`User does not exists with id: ${req.params.id}`,400))
+    }
+
+    res.status(200).json({
+        success:true
+    })
+})
+
+// TO delete user --(Admin)
+exports.deleteUser = catchAsyncError(async(req,res,next)=>{
+    const user = await User.findById(req.params.id);
+
+        // WE will remove clodinary later
+    
+        if(!user){
+            return next(new ErrorHandler(`User does not exists with id: ${req.params.id}`,400))
+        }
+
+        await user.deleteOne()
+
+
+    res.status(200).json({
+        success:true,
+        message:"User deleted Successfully"
+    })
 })
